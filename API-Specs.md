@@ -1,6 +1,5 @@
 # SUSHEE's API Spec
 ## Food
----
 ### Get All Foods
 **Method:** GET
 **URL:** /api/v1/foods
@@ -46,7 +45,7 @@ response: {
 ---
 ### Get Food By Id
 **Method:** GET
-**URL:** /api/v1/foods/{foodID}
+**URL:** /api/v1/foods/{id}
 
 **Description:** 
 This endpoint will return a food object with an ID of {foodID} integer.
@@ -78,8 +77,48 @@ response: {
 ```
 ---
 ### Post Food
----
-### Update Food
+**Method:** POST
+**URL:** /api/v1/food/{id}
+
+**Description:** 
+This endpoint will posts an admin object to the server. If the id are matched, the mathced admin object will be updated. If the id are not matched, a new admin object will be created.
+
+**Request's Body**
+```json
+body: {
+	"id": 123,
+	"name": "Salmon Maki Roll",
+	"description": "Rolled rice with salmon and cucumber, wrapped inside a nori maki",
+	"stock": 84,
+	"image": "https://linktoimage"
+}
+```
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	data: {
+		"id": 123,
+		"name": "Salmon Maki Roll",
+		"description": "Rolled rice with salmon and cucumber, wrapped inside a nori maki",
+		"stock": 84,
+		"image": "https://linktoimage"
+	}
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/food/{id}"
+}
+```
 ---
 ## Reservation
 ---
@@ -88,7 +127,6 @@ response: {
 ## Purchase
 ---
 ## Admin
----
 ### Get All Admins
 **Method:** GET
 **URL:** /api/v1/admins
@@ -173,13 +211,13 @@ response: {
 ```
 ---
 ## Ticket
----
 ### Reservation Ticket
 ---
 ## Login Form
----
 ### Login
+---
 ### Register
+---
 ### Logout
 ---
 ## Reservation Form
