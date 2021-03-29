@@ -45,7 +45,7 @@ response: {
 ---
 ### Get Food By Id
 **Method:** GET
-**URL:** /api/v1/foods/{id}
+**URL:** /api/v1/food/{id}
 
 **Description:** 
 This endpoint will return a food object with an ID of {foodID} integer.
@@ -72,7 +72,7 @@ response: {
 	"status": 400 ,
 	"error": "Bad Request" ,
 	"message": "Request body has invalid type or missing field" ,
-	"path": "/api/v1/foods/{foodID}"
+	"path": "/api/v1/food/{id}"
 }
 ```
 ---
@@ -81,7 +81,7 @@ response: {
 **URL:** /api/v1/food/{id}
 
 **Description:** 
-This endpoint will posts a food object to the server. If the id are matched, the mathced food object will be updated. If the id are not matched, a new food object will be created.
+This endpoint will posts a food object to the server. If the id are matched, the matched food object will be updated. If the id are not matched, a new food object will be created.
 
 **Request's Body**
 ```json
@@ -121,6 +121,106 @@ response: {
 ```
 ---
 ## Reservation
+### Get Reservation
+**Method:** GET
+**URL:** /api/v1/reservation
+
+**Description:** 
+This endpoint will send a token to get current user's reservation ticket
+
+**Request's Body**
+```json
+body: {
+	"user": {
+		"email": user@future.com,
+		"password": "******"
+	},
+	"token": "13HI786YFU8P"
+}
+```
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	"reservation": {
+		"token": "123OIH87H9",
+		"validDate": "2020-11-30",
+		"validTime": "09:56",
+		"person": 2
+	}
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/reservation"
+}
+```
+---
+### Post Reservation
+**Method:** POST
+**URL:** /api/v1/reservation
+
+**Description:** 
+This endpoint will send a token and reservation details
+
+**Request's Body**
+```json
+body: {
+	"user": {
+		"email": user@future.com,
+		"password": "******"
+	},
+	"token": "13HI786YFU8P",
+	"reservation": {
+		"date": "2020-11-30",
+		"time": "09:56",
+		"seat": [
+			{
+				"id": 4,
+			},
+			{
+				"id": 8
+			},
+			...
+		]
+	}
+}
+```
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	"reservation": {
+		"token": "123OIH87H9",
+		"priceDetail": {
+			"person": 2,
+			"price": 400000,
+			"tax": 40000
+		}
+	}
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/reservation"
+}
+```
 ---
 ## Order
 ### Get Order
@@ -148,18 +248,20 @@ response: {
 	message: "OK",
 	"order": {
 		"token": "123OIH87H9",
-		"order-list": [
-			"id": 123,
-			"name": "Salmon Maki Roll",
-			"quantity": 3
-		},
-		{
-			"id": 131,
-			"name": "Nigiri Maki Roll",
-			"quantity": 5
-		},
-		...
-	]
+		"orderList": [
+			{
+				"id": 123,
+				"name": "Salmon Maki Roll",
+				"quantity": 3
+			},
+			{
+				"id": 131,
+				"name": "Nigiri Maki Roll",
+				"quantity": 5
+			},
+			...
+		]
+	}
 }
 ```
 
@@ -208,7 +310,94 @@ body: {
 }
 ```
 ---
-## Purchase
+## Purchase History
+### Get All Purchase History
+**Method:** GET
+**URL:** /api/v1/purchases
+
+**Description:** 
+This endpoint will return a list of all purchase history
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	data: [
+		{
+			"id": 123,
+			"email": "abc@a.com",
+			"date": "2020-04-11",
+			"time": "09:56",
+			"table": 06,
+			"status": 1
+		},
+		{
+			"id": 124,
+			"email": "bcd@a.com",
+			"date": "2020-04-11",
+			"time": "09:56",
+			"table": 03,
+			"status": 0
+		},
+		...
+	]
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/purchases"
+}
+```
+---
+### Get Purchase History By Id
+**Method:** GET
+**URL:** /api/v1/purchase/{id}
+
+**Description:** 
+This endpoint will return a purchase history detail with an ID of {purchaseID} integer.
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	data: {
+		"id": 123,
+		"person": 2,
+		"orderList": [
+			{
+				"id": 123,
+				"name": "Salmon Maki Roll",
+				"quantity": 3
+			},
+			{
+				"id": 131,
+				"name": "Nigiri Maki Roll",
+				"quantity": 5
+			},
+			...
+		]
+	}
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/purchase/{id}"
+}
+```
 ---
 ## Admin
 ### Get All Admins
