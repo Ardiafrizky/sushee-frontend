@@ -131,11 +131,7 @@ This endpoint will send a token to get current user's reservation ticket
 **Request's Body**
 ```json
 body: {
-	"user": {
-		"email": user@future.com,
-		"password": "******"
-	},
-	"token": "13HI786YFU8P"
+
 }
 ```
 
@@ -145,10 +141,11 @@ response: {
 	status: 200,
 	message: "OK",
 	"reservation": {
-		"token": "123OIH87H9",
 		"validDate": "2020-11-30",
-		"validTime": "09:56",
-		"person": 2
+		"validTime": "02:00",
+		"person": 2,
+		"seat": 6,
+		"qr": "null"
 	}
 }
 ```
@@ -174,23 +171,11 @@ This endpoint will send a token and reservation details
 **Request's Body**
 ```json
 body: {
-	"user": {
-		"email": user@future.com,
-		"password": "******"
-	},
-	"token": "13HI786YFU8P",
 	"reservation": {
 		"date": "2020-11-30",
 		"time": "09:56",
-		"seat": [
-			{
-				"id": 4,
-			},
-			{
-				"id": 8
-			},
-			...
-		]
+		"seat": 6,
+		"person": 2
 	}
 }
 ```
@@ -198,12 +183,47 @@ body: {
 **Success Response**
 ```json
 response: {
-	status: 200,
-	message: "OK",
+	"status": 200,
+	"message": "OK"
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/reservation"
+}
+```
+---
+## Price
+### Get Price
+**Method:** GET
+**URL:** /api/v1/
+
+**Description:** 
+This endpoint will send 
+
+**Request's Body**
+```json
+body: {
 	"reservation": {
-		"token": "123OIH87H9",
+		"person": 2
+	}
+}
+```
+
+**Success Response**
+```json
+response: {
+	"status": 200,
+	"message": "OK",
+	"reservation": {
+		"person": 2,
 		"priceDetail": {
-			"person": 2,
 			"price": 400000,
 			"tax": 40000
 		}
@@ -221,6 +241,7 @@ response: {
 	"path": "/api/v1/reservation"
 }
 ```
+
 ---
 ## Order
 ### Get Order
@@ -233,35 +254,28 @@ This endpoint will send a token to get current user's order list
 **Request's Body**
 ```json
 body: {
-	"user": {
-		"email": user@future.com,
-		"password": "******"
-	},
-	"token": "13HI786YFU8P"
+	
 }
 ```
 
 **Success Response**
 ```json
 response: {
-	status: 200,
-	message: "OK",
-	"order": {
-		"token": "123OIH87H9",
-		"orderList": [
-			{
-				"id": 123,
-				"name": "Salmon Maki Roll",
-				"quantity": 3
-			},
-			{
-				"id": 131,
-				"name": "Nigiri Maki Roll",
-				"quantity": 5
-			},
-			...
-		]
-	}
+	"status": 200,
+	"message": "OK",
+	"orders": [
+		{
+			"id": 123,
+			"name": "Salmon Maki Roll",
+			"quantity": 3
+		},
+		{
+			"id": 131,
+			"name": "Nigiri Maki Roll",
+			"quantity": 5
+		},
+		...
+	]
 }
 ```
 
@@ -286,11 +300,6 @@ This endpoint will send a token and an order to be added to the user's order lis
 **Request's Body**
 ```json
 body: {
-	"user": {
-		"email": user@future.com,
-		"password": "******"
-	},
-	"token": "13HI786YFU8P",
 	"order": {
 		"id": 123,
 		"name": "Salmon Nigiri",
@@ -321,16 +330,16 @@ This endpoint will return a list of all purchase history
 **Success Response**
 ```json
 response: {
-	status: 200,
-	message: "OK",
-	data: [
+	"status": 200,
+	"message": "OK",
+	"data": [
 		{
 			"id": 123,
 			"email": "abc@a.com",
 			"date": "2020-04-11",
 			"time": "09:56",
 			"table": 06,
-			"status": 1
+			"status": "accepted"
 		},
 		{
 			"id": 124,
@@ -338,7 +347,7 @@ response: {
 			"date": "2020-04-11",
 			"time": "09:56",
 			"table": 03,
-			"status": 0
+			"status": "denied"
 		},
 		...
 	]
@@ -366,12 +375,12 @@ This endpoint will return a purchase history detail with an ID of {purchaseID} i
 **Success Response**
 ```json
 response: {
-	status: 200,
-	message: "OK",
-	data: {
+	"status": 200,
+	"message": "OK",
+	"data": {
 		"id": 123,
 		"person": 2,
-		"orderList": [
+		"orders": [
 			{
 				"id": 123,
 				"name": "Salmon Maki Roll",
@@ -453,6 +462,7 @@ This endpoint will posts an admin object to the server. If the id are matched, t
 body: {
 	"id": 124,
 	"email": "bcd@a.com",
+	"password": "*******",
 	"dateAdded": "2010-04-11",
 	"image": "https://linktoimage"
 }
@@ -463,12 +473,6 @@ body: {
 response: {
 	status: 200,
 	message: "OK",
-	data: {
-		"id": 124,
-		"email": "bcd@a.com",
-		"dateAdded": "2010-04-11",
-		"image": "https://linktoimage"
-	}
 }
 ```
 
@@ -483,8 +487,150 @@ response: {
 }
 ```
 ---
-## Ticket
-### Reservation Ticket
+## Seat
+### Get All Seat
+**Method:** GET
+**URL:** /api/v1/admin/table
+
+**Description:** 
+This endpoint will 
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	data: [
+		"id": 12,
+		"capacity": 2,
+		"status": "available"
+	]
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/admins"
+}
+```
+---
+### Post Seat
+**Method:** POST
+**URL:** /api/v1/admin/{id}
+
+**Description:** 
+This endpoint will posts 
+
+**Request's Body**
+```json
+body: {
+	"id": 12,
+	"capacity": 2,
+	"status": "available"
+}
+```
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/admin/{id}"
+}
+```
+---
+## Profile
+### Profile
+**Method:** GET
+**URL:** /api/v1/profile
+
+**Description:** 
+This endpoint will 
+
+**Request's Body**
+```json
+body: {
+
+}
+```
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	data: {
+		"email": "bcd@a.com",
+		"firstName": "John",
+		"lastName": "Doe",
+		"image": "https://linktoimage"
+	}
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/login"
+}
+```
+---
+## Password
+### Password
+**Method:** POST
+**URL:** /api/v1/profile/password
+
+**Description:** 
+This endpoint will 
+
+**Request's Body**
+```json
+body: {
+	"oldPassword": "******",
+	"newPassword": "******"
+}
+```
+
+**Success Response**
+```json
+response: {
+	status: 200,
+	message: "OK",
+	data: {
+
+	}
+}
+```
+
+**Failed Response**   
+```json
+ response: {
+	"timestamp": "2020-11-30T09:56:35.815+0000" ,
+	"status": 400 ,
+	"error": "Bad Request" ,
+	"message": "Request body has invalid type or missing field" ,
+	"path": "/api/v1/login"
+}
+```
 ---
 ## Login Form
 ### Login
@@ -508,10 +654,6 @@ response: {
 	status: 200,
 	message: "OK",
 	data: {
-		"user": {
-			"email": user@future.com,
-			"password": "******"
-		},
 		"token": "13HI786YFU8P"
 	}
 }
@@ -539,7 +681,9 @@ This endpoint will post email and password value to the back-end which will retu
 ```json
 body: {
 	"email": user@future.com,
-	"password": "******"
+	"password": "******",
+	"firstName": "John",
+	"lastName": "Doe"
 }
 ```
 
@@ -549,10 +693,6 @@ response: {
 	status: 200,
 	message: "OK",
 	data: {
-		"user": {
-			"email": user@future.com,
-			"password": "******"
-		},
 		"token": "13HI786YFU8P"
 	}
 }
@@ -579,10 +719,6 @@ This endpoint will sent a token to be deactivated
 **Request's Body**
 ```json
 body: {
-	"user": {
-		"email": user@future.com,
-		"password": "******"
-	},
 	"token": "13HI786YFU8P"
 }
 ```
@@ -597,5 +733,3 @@ body: {
 	"path": "/api/v1/login"
 }
 ```
----
-## Reservation Form
