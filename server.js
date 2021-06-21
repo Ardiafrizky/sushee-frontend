@@ -2,12 +2,12 @@ const http = require('http')
 const { getFoods, getFood, createFood, updateFood, deleteFood } = require('./controller/foodController')
 
 const server = http.createServer((req, res) => {
-    if(req.url === '/api/v1/foods' && req.method === 'GET') {
+    if(req.url === '/menu' && req.method === 'GET') {
         getFoods(req, res)
     } else if(req.url.match(/\/api\/v1\/food\/([0-9]+)/) && req.method === 'GET')  {
         const id = req.url.split('/')[3]
         getFood(req, res, id)
-    } else if(req.url === '/api/v1/foods' && req.method === 'POST') {
+    } else if(req.url === '\/api\/v1\/foods' && req.method === 'POST') {
         createFood(req, res)
     } else if(req.url.match(/\/api\/v1\/food\/([0-9]+)/) && req.method === 'PUT')  {
         const id = req.url.split('/')[3]
@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
         deleteFood(req, res, id)
     } else {
         res.writeHead(404, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringfy({ message: 'Route Not Found' }))
+        res.end(JSON.stringify({ message: 'Route Not Found' }))
     }
 })
 

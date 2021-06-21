@@ -1,0 +1,28 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body{
+    /* background-image: linear-gradient(120deg ,#edc647, #537abb); */
+    color: rgb(0, 0, 0);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+nav {
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+
+}

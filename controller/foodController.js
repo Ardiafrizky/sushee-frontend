@@ -1,15 +1,32 @@
-const Food = require('../models/foodModel')
+const Food = require('../model/foodModel')
 
 // @desc    Gets all foods
 // @route   GET /foods
 async function getFoods(req, res) {
     try {
-        const foods = await Food.findAll()
+        // const foods = await Food.findAll()
 
-        res.writeHead(200, { 'Content-Type': 'text/html' })
+        // res.writeHead(200, { 'Content-Type': 'text/html' })
+        // var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+
+        fetch('localhost:8000/api/menu/', {
+            method: 'GET',
+            headers: {
+                 'Content-Type': 'application/json',
+                 // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData //if any
+         })
+           .then(function(response) {
+             return response.json();
+           })
+           .then(function(myJson) {
+             console.log(JSON.stringify(myJson));
+           });
+
         res.end(
-            "<h1>this is home</h1>"
-        )        
+            "<h1>this is home</h1>"  
+        )
     } catch (error) {
         console.log(error)
     }

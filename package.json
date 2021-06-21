@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Ardiafrizky/sushee-frontend#readme",
   "dependencies": {
+    "nodemon": "^2.0.7",
     "uuid": "^8.3.2"
   }
 }

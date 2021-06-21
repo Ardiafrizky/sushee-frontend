@@ -1,0 +1,23 @@
+[
+    {
+        "id": 2,
+        "name": "Sushi Maki",
+        "description": "this is a description",
+        "unit": "gelas",
+        "imageUrl": "https"
+    },
+    {
+        "id": 5,
+        "name": "Sushi Roll",
+        "description": "dog and cat",
+        "unit": "meja",
+        "imageUrl": "https2"
+    },
+    {
+        "id": 6,
+        "name": "Ebi",
+        "description": "pizza",
+        "unit": "kursi",
+        "imageUrl": "https3"
+    }
+]
