@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+        />
+
+        <title>SUSHEE</title>
+    </head>
+    <body>
+        <!-- <div class="container"> -->
+        <nav>
+            <img src="./SUSHEE.png" alt="logo" class="logo" />
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Reservation</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <p class="banner big">Reservation Summary</p>
+
+        <div class="content">
+            <label class="x"
+                >Reservation date & time
+                <input
+                    type="text"
+                    id="r-date"
+                    placeholder="Reservation date & time"
+                />
+            </label>
+            <label class="x"
+                >Reservation table
+                <input
+                    type="text"
+                    id="r-table"
+                    placeholder="Reservation table"
+                />
+            </label>
+            <p class="x">Total</p>
+            <p class="x">Price Detail</p>
+            <p class="x">Reservation cost</p>
+            <p class="x">Tax</p>
+            <a href="thankyou.html" class="button primary"
+                >Confirm reservation</a
+            >
+            <a href="reservation-seat.html" class="button secondary"
+                >Back to seat selection</a
+            >
+        </div>
+
+        <div id="content1"></div>
+        <script src="food.js"></script>
+        <!-- </div> -->
+    </body>
+</html>
