@@ -27,11 +27,11 @@ document.getElementById("foodmenu").innerHTML = `
 ${menuData.map(function(menu) {
     return `
     <div>
-        <h2>${menu.name}</h2>
+        <h2 class="menu">${menu.name}</h2>
         <p>${menu.description}</p>
     </div>
     `
 }).join('')}
-<p>All right reserved C 2021.</p>
+<footer>All right reserved C 2021.</footer>
 `
 
