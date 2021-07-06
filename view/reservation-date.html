@@ -13,15 +13,7 @@
         />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            $(function () {
-                var pages = $("[data-page]");
-                $.each(pages, function () {
-                    var file = $(this).data("page") + ".html";
-                    $(this).load(file);
-                });
-            });
-        </script>
+        <script src="script.js"></script>
     </head>
 
     <body>
@@ -40,10 +32,10 @@
             <a href="reservation-seat.html" class="button primary"
                 >Confirm date and time</a
             >
+            <a href="homepage.html" class="button secondary"
+                >Back to Menu Selection</a
+            >
         </div>
-
-        <div id="content1"></div>
-        <script src="food.js"></script>
 
         <div data-page="footer"></div>
     </body>

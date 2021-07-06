@@ -1,9 +1,14 @@
 <head>
     <style>
         header {
-            margin: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
+            background-color: white;
+            overflow: hidden;
+            padding: 15px 24px;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
 
         header ul {
@@ -13,13 +18,14 @@
             max-width: 350px;
             height: 100%;
             left: -100%;
-            margin-top: 2.6rem;
+            margin-top: 42px;
             text-align: center;
             transition: all 0.3s;
         }
 
         header ul li {
-            margin: 1rem;
+            display: block;
+            margin: 30px;
         }
 
         header ul li a {
@@ -41,6 +47,7 @@
 
         #img-banner {
             width: 100%;
+            margin-top: 57px;
             margin-bottom: -4px;
         }
     </style>
@@ -52,14 +59,16 @@
             <img src="./bar.png" alt="bar" id="bar" />
         </label>
         <input type="checkbox" id="check" />
-        <img src="./sushee-black.png" alt="logo" id="logo" />
+        <a href="homepage.html">
+            <img src="./sushee-black.png" alt="logo" id="logo" />
+        </a>
         <img src="./bowl.png" alt="bowl" id="bowl" />
 
         <ul>
-            <li><a href="homepage.html" class="active">Home</a></li>
+            <li><a href="homepage.html">Home</a></li>
             <li><a href="#">Reservation</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="login.html">Log Out</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="login.html">Log out</a></li>
         </ul>
     </header>
 

@@ -13,21 +13,13 @@
         />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            $(function () {
-                var pages = $("[data-page]");
-                $.each(pages, function () {
-                    var file = $(this).data("page") + ".html";
-                    $(this).load(file);
-                });
-            });
-        </script>
+        <script src="script.js"></script>
     </head>
 
     <body>
         <div data-page="header"></div>
 
-        <p class="banner big">Login</p>
+        <p class="banner big">Please Login to Continue</p>
 
         <div class="content">
             <label class="x"

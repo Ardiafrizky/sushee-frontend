@@ -13,15 +13,7 @@
         />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            $(function () {
-                var pages = $("[data-page]");
-                $.each(pages, function () {
-                    var file = $(this).data("page") + ".html";
-                    $(this).load(file);
-                });
-            });
-        </script>
+        <script src="script.js"></script>
     </head>
 
     <body>
@@ -35,7 +27,7 @@
             <img src="qr.png" alt="qr" class="qr" />
             <div class="barcode column">
                 <h4>Valid until:</h4>
-                <p>Tuesday, 14 Feb</p>
+                <p>Tuesday, 14 Feb 2021</p>
                 <p>17.00 WIB</p>
                 <p>Reserved for me</p>
             </div>
