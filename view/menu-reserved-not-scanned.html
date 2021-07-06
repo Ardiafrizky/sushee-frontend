@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    
-    <title>SUSHEE</title>
-</head>
-<body>
-   
-    <div class="container">
-        <nav>
-            <img src="./SUSHEE.png" alt="logo" class="logo">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SUSHEE</title>
 
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Reservation</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+        />
 
-        <main>
-            <p class="x">You have an active reservation. 
-                Please scan the barcode below and sit on the reserved table</p>
-            <a href="menu-reserved.html">Barcode</a>
-            <p class="x">You can start ordering after the barcode are validated</p>
-        </main>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                var pages = $("[data-page]");
+                $.each(pages, function () {
+                    var file = $(this).data("page") + ".html";
+                    $(this).load(file);
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div data-page="header"></div>
+
+        <p class="banner">
+            You have an active reservation. Please scan the barcode below and
+            sit on the reserved table
+        </p>
+        <div class="barcode">
+            <img src="qr.png" alt="qr" class="qr" />
+            <div class="barcode column">
+                <h4>Valid until:</h4>
+                <p>Tuesday, 14 Feb</p>
+                <p>17.00 WIB</p>
+                <p>Reserved for me</p>
+            </div>
+        </div>
+        <p class="banner small">
+            You can start ordering after the barcode are validated
+        </p>
+
         <div id="content1"></div>
         <script src="food.js"></script>
-    </div>
-        
 
-</body>
+        <div data-page="footer"></div>
+    </body>
 </html>

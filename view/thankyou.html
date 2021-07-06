@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SUSHEE</title>
+
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -10,27 +12,26 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
         />
 
-        <title>SUSHEE</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                var pages = $("[data-page]");
+                $.each(pages, function () {
+                    var file = $(this).data("page") + ".html";
+                    $(this).load(file);
+                });
+            });
+        </script>
     </head>
-    <body>
-        <!-- <div class="container"> -->
-        <nav>
-            <img src="./SUSHEE.png" alt="logo" class="logo" />
 
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Reservation</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+    <body>
+        <div data-page="header"></div>
 
         <p class="banner big">Thanks for your purchase!</p>
         <div class="content">
             <label class="x">
-                We will immediately process your reservation. You'll get the QR
-                Code after we approve your reservation. Plase check your profile
-                page to see your reservation status.
+                You will get the QR Code after we approve your reservation.
+                Please check your profile page to see your reservation status.
             </label>
 
             <a href="homepage.html" class="button primary">Go to homepage</a>
@@ -38,6 +39,7 @@
 
         <div id="content1"></div>
         <script src="food.js"></script>
-        <!-- </div> -->
+
+        <div data-page="footer"></div>
     </body>
 </html>

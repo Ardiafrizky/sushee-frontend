@@ -3,45 +3,42 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SUSHEE</title>
+
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-            crossorigin="anonymous"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
         />
 
-        <title>SUSHEE</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                var pages = $("[data-page]");
+                $.each(pages, function () {
+                    var file = $(this).data("page") + ".html";
+                    $(this).load(file);
+                });
+            });
+        </script>
     </head>
+
     <body>
-        <div class="container">
-            <nav>
-                <img src="./SUSHEE.png" alt="logo" class="logo" />
+        <div data-page="header"></div>
 
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Reservation</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
-
-            <main>
-                <p class="x">Welcome, Avi. Enjoy the Menu</p>
-                <a href="menu-reserved.html">Table</a>
-                <p class="x">
-                    Order the menu by clicking the dish below. The dish will be
-                    added to your queue and will be delivered ASAP
-                </p>
-            </main>
-
-            <div id="content1"></div>
-            <script src="food.js"></script>
+        <div class="content">
+            <p class="x">Welcome, Avi. Enjoy the Menu</p>
+            <a href="menu-reserved.html">Table</a>
+            <p class="x">
+                Order the menu by clicking the dish below. The dish will be
+                added to your queue and will be delivered ASAP
+            </p>
         </div>
+
+        <div id="content1"></div>
+        <script src="food.js"></script>
+
+        <div data-page="footer"></div>
     </body>
 </html>

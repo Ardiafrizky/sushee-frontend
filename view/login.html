@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SUSHEE</title>
+
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -10,20 +12,21 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
         />
 
-        <title>SUSHEE</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                var pages = $("[data-page]");
+                $.each(pages, function () {
+                    var file = $(this).data("page") + ".html";
+                    $(this).load(file);
+                });
+            });
+        </script>
     </head>
-    <body>
-        <!-- <div class="container"> -->
-        <nav>
-            <img src="./SUSHEE.png" alt="logo" class="logo" />
 
-            <ul>
-                <li><a href="#" class="">Home</a></li>
-                <li><a href="#">Reservation</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+    <body>
+        <div data-page="header"></div>
+
         <p class="banner big">Login</p>
 
         <div class="content">
@@ -39,6 +42,7 @@
             <p class="x">No account? Sign up here</p>
             <a href="signup.html" class="button secondary">Sign Up</a>
         </div>
-        <!-- </div> -->
+
+        <div data-page="footer"></div>
     </body>
 </html>

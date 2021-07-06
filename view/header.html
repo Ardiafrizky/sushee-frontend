@@ -1,0 +1,67 @@
+<head>
+    <style>
+        header {
+            margin: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header ul {
+            background: #2e2e2e;
+            position: fixed;
+            width: 70%;
+            max-width: 350px;
+            height: 100%;
+            left: -100%;
+            margin-top: 2.6rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        header ul li {
+            margin: 1rem;
+        }
+
+        header ul li a {
+            color: white;
+            font-size: large;
+        }
+
+        .bar {
+            margin-top: auto;
+        }
+
+        #check {
+            display: none;
+        }
+
+        #check:checked ~ ul {
+            left: 0;
+        }
+
+        #img-banner {
+            width: 100%;
+            margin-bottom: -4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <label for="check" class="bar">
+            <img src="./bar.png" alt="bar" id="bar" />
+        </label>
+        <input type="checkbox" id="check" />
+        <img src="./sushee-black.png" alt="logo" id="logo" />
+        <img src="./bowl.png" alt="bowl" id="bowl" />
+
+        <ul>
+            <li><a href="homepage.html" class="active">Home</a></li>
+            <li><a href="#">Reservation</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="login.html">Log Out</a></li>
+        </ul>
+    </header>
+
+    <img src="./img-banner.png" alt="img-banner" id="img-banner" />
+</body>
