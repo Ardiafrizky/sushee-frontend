@@ -6,6 +6,7 @@
         <title>SUSHEE</title>
 
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="menu.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             rel="stylesheet"
@@ -19,11 +20,14 @@
     <body>
         <div data-page="header"></div>
 
-        <h1 class="title">
-            Welcome to <br />
-            Sushee Restaurant
-        </h1>
-        <h3 class="subtitle">Let the fishes swim in your stomach</h3>
+        <div class="content">
+            <h1 class="title">
+                Welcome to <br />
+                Sushee Restaurant
+            </h1>
+            <h3 class="subtitle">Let the fishes swim in your stomach</h3>
+        </div>
+
         <p class="banner small">
             You have no active reservation. Please make a reservation before
             placing an order
@@ -32,8 +36,29 @@
             >
         </p>
 
-        <div id="content1"></div>
-        <script src="food.js"></script>
+        <div id="menu"></div>
+
+        <!-- The Modal -->
+        <!-- <button id="myBtn">Open Modal</button> -->
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Modal Header</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the Modal Body</p>
+                    <p>Some other text...</p>
+                </div>
+                <div class="modal-footer">
+                    <h3>Modal Footer</h3>
+                </div>
+            </div>
+        </div>
+
+        <script src="menu.js"></script>
 
         <div data-page="footer"></div>
     </body>

@@ -4,16 +4,15 @@
     box-sizing: border-box;
     text-decoration: none;
     max-width: 600px;
+    font-family: Roboto;
     /* overflow-x: hidden; */
     --orange1: #ec493f;
-}
-
-body {
-    font-family: Roboto;
+    --bradius: 4px;
+    --margin: 24px;
 }
 
 .content {
-    margin: 1.5rem;
+    margin: var(--margin);
     overflow-y: scroll;
 }
 
@@ -21,13 +20,12 @@ body {
     background-color: var(--orange1);
     color: white;
     text-align: center;
-    padding: 1.2rem;
+    padding: var(--margin);
     width: 100%;
 }
 
 .banner.big {
-    font-size: 1.25rem; /* 20px */
-    font-style: thin;
+    font-size: 1.25rem;
 }
 
 input {
@@ -36,14 +34,14 @@ input {
     margin: 8px 0 20px;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: var(--bradius);
 }
 
 .button {
     display: block;
     width: 100%;
     border: 2px solid var(--orange1);
-    border-radius: 4px;
+    border-radius: var(--bradius);
     margin: 10px 0;
     padding: 10px;
     text-align: center;
@@ -79,9 +77,10 @@ input {
     margin-top: -70px;
 }
 
-.image-c {
+#profile {
     width: 140px;
     height: 140px;
+    border: 3px solid white;
     border-radius: 50%;
     margin: 0 auto 10px;
 }
@@ -90,7 +89,7 @@ input {
 .reservation {
     width: 100%;
     border: 2px solid var(--orange1);
-    border-radius: 4px;
+    border-radius: var(--bradius);
     padding: 10px 20px;
 }
 
@@ -131,37 +130,6 @@ a {
       "footer footer footer"; */
 /* grid-gap: 0.2rem; */
 /* } */
-
-.title {
-    font-family: Roboto;
-    /* font-style: normal;
-    font-weight: italic; */
-    /* font-size: 2.5rem; */
-    text-align: left;
-    margin: 1rem 1.5rem 0.5rem;
-
-    color: var(--orange1);
-}
-
-.subtitle {
-    font-family: Roboto;
-    /* font-style: normal;
-    font-weight: 300; */
-    font-size: 2rem 1.5rem;
-    /* line-height: 28px; */
-    margin: 0 1.5rem 0.8rem;
-
-    color: #000000;
-}
-
-.menu {
-    font-family: Roboto;
-    /* font-style: normal;
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 37px; */
-    color: var(--orange1);
-}
 
 a:hover,
 a.active {
