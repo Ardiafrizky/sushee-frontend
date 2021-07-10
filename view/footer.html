@@ -23,7 +23,22 @@
             margin: 15px;
         }
         footer ul li a {
+            position: relative;
             color: white;
+        }
+
+        footer ul li a:before {
+            position: absolute;
+            content: "";
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: white;
+            transition: all 0.5s;
+        }
+        footer ul li a:hover:before {
+            width: 100%;
         }
 
         .copyright {
