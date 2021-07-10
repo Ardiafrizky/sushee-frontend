@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="admin-purchase-history.css" />
+        <link rel="stylesheet" href="admin-manage-reservation.css" />
         <link rel="stylesheet" href="popup.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -20,9 +20,12 @@
     <body>
         <div data-page="header"></div>
 
-        <div class="banner banner-big">Purchase History</div>
+        <div class="banner banner-big">Reservation Management</div>
+
         <div class="content">
-            <table class="purchase-history">
+            <div class="button button-secondary">
+                + Add Reservation</div>
+            <table class="reservation-management">
                 <tr>
                     <th>User</th>
                     <th>Date</th>
@@ -58,10 +61,10 @@
             <div class="popup" id="popup">
                 <div class="popup-header">
                     <img src="sign-x.png" class="popup-close"></img>
-                    <div class="popup-header-title">Purchase Detail</div>
+                    <div class="popup-header-title">Reservation Detail</div>
                 </div>
                 <div class="popup-content">
-                    <div class="purchase-detail">
+                    <div class="reservation-detail">
                         <div>
                             <div class="category">User</div>
                             <div class="">user@email.com</div>
@@ -78,32 +81,17 @@
                             <div class="category">Table</div>
                             <div class="">06 (2 Person)</div>
                         </div>
-                        <div>
-                            <div class="category">Orders</div>
-                        </div>
-                        <div class="order-list">
-                            <div>
-                                <div class="">Salmon Maki</div>
-                                <div class="">6 Pcs</div>
-                            </div>
-                            <hr>
-                            <div>
-                                <div class="">Salmon Maki</div>
-                                <div class="">6 Pcs</div>
-                            </div>
-                            <hr>
-                            <div>
-                                <div class="">Salmon Maki</div>
-                                <div class="">6 Pcs</div>
-                            </div>
-                            <hr>
-                        </div>
                     </div>
-               
+                    
+                    <a href="admin-manage-reservation.html" class="button button-approve">
+                        Approve reservation</a>
+                    <a href="admin-manage-reservation.html" class="button button-deny">
+                        Deny reservation</a>
+                    
                 </div>
             </div>
         </div>
-        
+
         <script src="popup.js"></script>
 
         <div data-page="footer"></div>

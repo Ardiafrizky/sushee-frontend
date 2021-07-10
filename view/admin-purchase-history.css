@@ -27,3 +27,33 @@
     background-color: var(--orange1);
     color: white;
 }
+
+/* Pop Up */
+
+.detail:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.purchase-detail > div:not(:last-child) {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.5;
+}
+
+.category {
+    font-weight: bold;
+}
+
+.order-list {
+    margin: 10px;
+}
+.order-list > div {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+
+.order-list:last-child {
+    margin-bottom: 30px;
+}

@@ -27,3 +27,32 @@
     background-color: var(--orange1);
     color: white;
 }
+
+/* Pop Up */
+
+.detail:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reservation-detail > div {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.5;
+}
+
+.category {
+    font-weight: bold;
+}
+
+.button-approve {
+    border: none;
+    background-color: #8beb73;
+    color: black;
+}
+
+.button-deny {
+    border: none;
+    background-color: var(--orange1);
+    color: white;
+}

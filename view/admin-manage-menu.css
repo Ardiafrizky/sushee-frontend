@@ -27,3 +27,21 @@
     background-color: var(--orange1);
     color: white;
 }
+
+/* Pop Up */
+
+.edit:hover,
+.change-image:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.change-image {
+    text-align: right;
+    color: var(--orange1);
+    margin: -5px 0 10px;
+}
+.menu-description {
+    resize: none;
+    line-height: var(--line-height);
+}

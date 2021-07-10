@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="admin-manage-administrator.css" />
+        <link rel="stylesheet" href="admin-manage-menu.css" />
         <link rel="stylesheet" href="popup.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -20,30 +20,30 @@
     <body>
         <div data-page="header"></div>
 
-        <div class="banner banner-big">Administrator Management</div>
+        <div class="banner banner-big">Menu Management</div>
 
         <div class="content">
             <div class="button button-secondary add" onclick="openPopup()">
-                + Add New Admin</div>
-            <table class="administrator-management">
+                + Add Menu</div>
+            <table class="reservation-management">
                 <tr>
-                    <th>User</th>
-                    <th>Date Added</th>
+                    <th>Menu</th>
+                    <th>Type</th>
                     <th>Action</th>
                 </tr>
                 <tr>
-                    <td>user@email.com</td>
-                    <td>16 Feb 21, 17.30</td>
+                    <td>Salmon Maki Sushi</td>
+                    <td>Maki Sushi</td>
                     <td class="edit" onclick="openPopup()">Edit</td>
                 </tr>
                 <tr>
-                    <td>user@email.com</td>
-                    <td>16 Feb 21, 17.30</td>
+                    <td>Salmon Maki Sushi</td>
+                    <td>Maki Sushi</td>
                     <td class="edit" onclick="openPopup()">Edit</td>
                 </tr>
                 <tr>
-                    <td>user@email.com</td>
-                    <td>16 Feb 21, 17.30</td>
+                    <td>Salmon Maki Sushi</td>
+                    <td>Maki Sushi</td>
                     <td class="edit" onclick="openPopup()">Edit</td>
                 </tr>
             </table>
@@ -52,57 +52,48 @@
             <a href="admin.html" class="button button-secondary">Cancel</a>
         </div>
 
-        <!-- Popup Edit -->
+
+        <!-- Popup detail -->
         <div class="popup-container">
             <div class="popup" id="popup">
                 <div class="popup-header">
                     <img src="sign-x.png" class="popup-close"></img>
-                    <div class="popup-header-title">Edit Admin</div>
+                    <div class="popup-header-title">Detail Menu</div>
                 </div>
+                <img
+                src="https://images.unsplash.com/photo-1562707786-7d2b807961c4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="image-detail"
+                />
                 
                 <div class="popup-content">
-                    <label class="x"
-                        >Email
+                    <div class="change-image">Change image</div>
+                    <label class="x">Menu name
                         <input
                             type="text"
-                            id="email"
-                            placeholder="Email"
+                            id="menu-name"
+                            placeholder="Menu name"
+                            maxlength="30"
                             class="input-text"
                             required
                         />
                     </label>
-                    <label class="x"
-                        >Password
-                        <span style="font-size: 0.8rem; color: #444"
-                            >(min 8 alphanumeric characters)</span
-                        >
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="Password"
-                            class="input-text"
-                            required
-                        />
-                    </label>
-                    <label class="x"
-                        >Confirm password
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="Confirm password"
-                            class="input-text"
-                            required
-                        />
+                    <label class="x">Menu description
+                        <textarea
+                            id="menu-description"
+                            placeholder="Menu description"
+                            rows="3"
+                            maxlength="100"
+                            class="input-text menu-description"
+                        ></textarea>
                     </label>
                     
-                    <a href="admin-manage-administrator.html" class="button button-primary">
+                    <a href="admin-manage-menu.html" class="button button-primary">
                         Save changes</a>
                 </div>
             </div>
         </div>
 
         <script src="popup.js"></script>
-
 
         <div data-page="footer"></div>
     </body>
