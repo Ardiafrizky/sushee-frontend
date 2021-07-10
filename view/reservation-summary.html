@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="reservation-summary.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -19,39 +19,36 @@
     <body>
         <div data-page="header"></div>
 
-        <p class="banner big">Reservation Summary</p>
+        <div class="banner banner-big">Reservation Summary</div>
 
         <div class="content">
-            <label class="x"
-                >Reservation date & time
-                <input
-                    type="text"
-                    id="r-date"
-                    placeholder="Reservation date & time"
-                />
-            </label>
-            <label class="x"
-                >Reservation table
-                <input
-                    type="text"
-                    id="r-table"
-                    placeholder="Reservation table"
-                />
-            </label>
-            <p class="x">Total</p>
-            <p class="x">Price Detail</p>
-            <p class="x">Reservation cost</p>
-            <p class="x">Tax</p>
-            <a href="thankyou.html" class="button primary"
+            <div class="status-title">Reservation date & time</div>
+            <div class="status">
+                Sunday, 14 February 2021 <br />
+                18.00 WIB - 19.00 WIB
+            </div>
+            <div class="status-title">Reservation table</div>
+            <div class="status">Table 6 (2 Person)</div>
+            <div class="total">
+                Total
+                <div class="total-price">Rp440.000,00</div>
+            </div>
+            <h4 class="x">Price detail</h4>
+            <div class="price-detail price-detail-cost">
+                <div class="x">Reservation cost <span>(x2)</span></div>
+                <div class="price-value">Rp400.000,00</div>
+            </div>
+            <div class="price-detail price-detail-tax">
+                <div class="x">Tax (10%)</div>
+                <div class="price-value">Rp40.000,00</div>
+            </div>
+            <a href="thank-you.html" class="button button-primary"
                 >Confirm reservation</a
             >
-            <a href="reservation-seat.html" class="button secondary"
+            <a href="reservation-seat.html" class="button button-secondary"
                 >Back to seat selection</a
             >
         </div>
-
-        <div id="content1"></div>
-        <script src="food.js"></script>
 
         <div data-page="footer"></div>
     </body>

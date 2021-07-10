@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="reservation-seat.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -19,14 +19,77 @@
     <body>
         <div data-page="header"></div>
 
-        <p class="banner big">Take your Seat</p>
+        <div class="banner banner-big">Take your Seat</div>
 
         <div class="content">
-            <p class="x">Seat</p>
-            <a href="reservation-summary.html" class="button primary"
+            <div class="seat-guide">
+                <div class="seat-column">
+                    <div>
+                        <div class="seat-box seat-box-available"></div>
+                        <div class="seat-text">Available</div>
+                    </div>
+                    <div class="seat-bottom">
+                        <div class="seat-box seat-box-taken"></div>
+                        <div class="seat-text">Taken</div>
+                    </div>
+                </div>
+
+                <div class="seat-column">
+                    <div>
+                        <div class="seat-box seat-box-person">2</div>
+                        <div class="seat-text">2 Person Table</div>
+                    </div>
+                    <div class="seat-bottom">
+                        <div class="seat-box seat-box-person">4</div>
+                        <div class="seat-text">4 Person Table</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seat-selection">
+                <div class="seat-row">
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">4</div>
+                </div>
+                <div class="seat-row">
+                    <div class="sb sba">4</div>
+                    <div class="sb sbt">2</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">4</div>
+                </div>
+                <div class="seat-row">
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">4</div>
+                </div>
+                <div class="seat-row">
+                    <div class="sb sbt">4</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sbt">2</div>
+                    <div class="sb sbt">4</div>
+                </div>
+                <div class="seat-row seat-row-bottom">
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">4</div>
+                    <div class="sb sbt">4</div>
+                    <div class="sb sbt">4</div>
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">4</div>
+                </div>
+            </div>
+
+            <div class="seat-status">
+                <span id="seat-count">2 Person Table</span> for a price of
+                <span id="seat-price">Rp400.000,00</span>
+            </div>
+
+            <a href="reservation-summary.html" class="button button-primary"
                 >Confirm seat</a
             >
-            <a href="reservation-date.html" class="button secondary"
+            <a href="reservation-date.html" class="button button-secondary"
                 >Back to date selection</a
             >
         </div>

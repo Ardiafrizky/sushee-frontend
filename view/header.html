@@ -1,11 +1,18 @@
 <head>
+    <!-- <script src="script.js"></script> -->
     <style>
+        * {
+            margin: 0;
+        }
         header {
             display: flex;
             justify-content: space-between;
             background-color: white;
             overflow: hidden;
             padding: 15px 24px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            box-sizing: border-box;
             position: fixed;
             top: 0;
             width: 100%;
@@ -14,12 +21,13 @@
         header ul {
             background: #2e2e2e;
             position: fixed;
-            width: 70%;
+            width: 60%;
             max-width: 350px;
             height: 100%;
             left: -100%;
             margin-top: 44px;
-            text-align: center;
+            /* text-align: center; */
+            z-index: 1;
             transition: all 0.3s;
         }
 
@@ -33,44 +41,73 @@
             font-size: large;
         }
 
-        .bar {
-            margin-top: auto;
+        /* .overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 59px;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0;
+            transition: 0.3s;
+        }
+ */
+        .checkbar {
+            margin-top: 4px;
+            cursor: pointer;
         }
 
-        #check {
+        #checkbox {
             display: none;
         }
 
-        #check:checked ~ ul {
+        #checkbox:checked ~ ul {
             left: 0;
         }
 
-        #img-banner {
+        .checkbar:hover,
+        .bowl:hover {
+            transition: 0.3s;
+            transform: scale(110%);
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+        /* .checkbox:checked ~ .overlay {
+            opacity: 0.5;
+        } */
+
+        .img-banner {
             width: 100%;
+            max-width: 600px;
             margin-top: 57px;
-            margin-bottom: -4px;
+            margin-bottom: -5px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <label for="check" class="bar">
-            <img src="./bar.png" alt="bar" id="bar" />
+        <label for="checkbox" class="checkbar">
+            <img src="./bar.png" alt="checkbar" id="checkbar" />
         </label>
-        <input type="checkbox" id="check" />
+        <input type="checkbox" id="checkbox" />
         <a href="homepage.html">
             <img src="./sushee-black.png" alt="logo" id="logo" />
         </a>
-        <img src="./bowl.png" alt="bowl" id="bowl" />
+        <a href="menu-reserved-not-scanned.html">
+            <img src="./bowl.png" alt="bowl" id="bowl" class="bowl" />
+        </a>
 
-        <ul>
+        <ul id="sidebar">
             <li><a href="homepage.html">Home</a></li>
-            <li><a href="#">Reservation</a></li>
+            <li><a href="menu-reserved-not-scanned.html">Reservation</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><a href="login.html">Log out</a></li>
         </ul>
+        <!-- <div class="overlay"></div> -->
     </header>
 
-    <img src="./img-banner.png" alt="img-banner" id="img-banner" />
+    <img src="./img-banner.png" alt="img-banner" class="img-banner" />
 </body>

@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="menu-reserved.css" />
+        <link rel="stylesheet" href="menu.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -19,17 +20,48 @@
     <body>
         <div data-page="header"></div>
 
-        <div class="content">
-            <p class="x">Welcome, Avi. Enjoy the Menu</p>
-            <a href="menu-reserved.html">Table</a>
-            <p class="x">
-                Order the menu by clicking the dish below. The dish will be
-                added to your queue and will be delivered ASAP
-            </p>
+        <div class="banner banner-big">Welcome, Avi. Enjoy the Menu</div>
+        <div class="table">
+            <div class="table-left">
+                <h4>TABLE</h4>
+                <div class="table-number">3</div>
+            </div>
+            <div class="table-vl"></div>
+            <div class="table-right">
+                <h4>Reservation Time Left</h4>
+                <div class="table-time">58 minutes</div>
+            </div>
         </div>
+        <div class="banner banner-small">
+            Order the menu by clicking the dish below. The dish will be added to
+            your queue and will be delivered ASAP
+        </div>
+        <div class="content">
+            <div class="queue">
+                <div class="queue-title">Queue</div>
+                <div class="queue-list">
+                    <div class="queue-add-order">+ Add Order</div>
+                    <div>
+                        <div class="queue-food">Tuna Maki</div>
+                        <div class="queue-quantity">4 Pcs</div>
+                        <!-- <img src="sign-x.png" class="queue-x" id="queue-x" /> -->
+                    </div>
+                    <div>
+                        <div class="queue-food">Nigiri</div>
+                        <div class="queue-quantity">6 Pcs</div>
+                        <!-- <img src="sign-x.png" class="queue-x" id="queue-x" /> -->
+                    </div>
+                    <div>
+                        <div class="queue-food">Ocha</div>
+                        <div class="queue-quantity">2 Cups</div>
+                        <!-- <img src="sign-x.png" class="queue-x" id="queue-x" /> -->
+                    </div>
+                </div>
+            </div>
 
-        <div id="content1"></div>
-        <script src="food.js"></script>
+            <div id="menu"></div>
+            <script src="menu.js"></script>
+        </div>
 
         <div data-page="footer"></div>
     </body>

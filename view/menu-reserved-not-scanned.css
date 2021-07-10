@@ -1,0 +1,19 @@
+@import "style.css";
+
+.barcode {
+    display: flex;
+    justify-content: center;
+    margin: 15px 3% 10px 0;
+}
+
+.barcode-right {
+    flex-direction: column;
+    margin-left: 3%;
+    line-height: 1.5;
+}
+
+.barcode img:hover {
+    transition: 0.3s;
+    transform: scale(107%);
+    cursor: pointer;
+}

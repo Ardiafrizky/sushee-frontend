@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="thank-you.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -19,14 +19,20 @@
     <body>
         <div data-page="header"></div>
 
-        <p class="banner big">Thanks for your purchase!</p>
+        <div class="banner banner-big">Thanks for your purchase!</div>
         <div class="content">
-            <label class="x">
+            <div class="thank-you-text">
                 You will get the QR Code after we approve your reservation.
                 Please check your profile page to see your reservation status.
-            </label>
+            </div>
 
-            <a href="homepage.html" class="button primary">Go to homepage</a>
+            <img src="thank-you.png" alt="thank-you" id="thank-you" />
+
+            <a
+                href="menu-reserved-not-scanned.html"
+                class="button button-primary"
+                >Go to homepage</a
+            >
         </div>
 
         <div data-page="footer"></div>

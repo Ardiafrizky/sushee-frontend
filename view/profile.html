@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="profile.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -19,47 +19,49 @@
     <body>
         <div data-page="header"></div>
 
-        <div class="image">
+        <div class="profile-picture">
             <div>
-                <img src="profile.png" alt="profile" id="profile" />
+                <img
+                    src="profile.png"
+                    alt="profile-picture"
+                    id="profile-picture"
+                />
             </div>
             <a href="">Change picture</a>
         </div>
 
         <div class="content">
-            <div class="column2">
-                <h3 class="name">Ardiaf Rizky</h3>
-                <a href="login.html" class="">Log out</a>
+            <div class="profile-name">
+                <div>
+                    <h3>Ardiaf Rizky</h3>
+                    <a href="login.html" class="">Log out</a>
+                </div>
+                <a href="change-name.html" class="">Change name</a>
             </div>
-            <a href="change-name.html" class="change">Change name</a>
 
-            <div class="email">
-                <div class="column2">
+            <div class="profile-email">
+                <div>
                     <p>Email</p>
                     <p>user@example.com</p>
                 </div>
-                <div class="column2">
+                <div class="profile-email-bottom">
                     <p>Password</p>
                     <a href="change-password.html" class="">Change password</a>
                 </div>
             </div>
 
-            <p class="">Reservation</p>
-            <div class="reservation">
+            <h4 class="">Reservation</h4>
+            <div class="profile-reservation">
                 <div>
                     <h4>Table 06</h4>
-                    <br />
+                    <h4 class="profile-reservation-status">Approved</h4>
+                </div>
+                <div class="profile-reservation-bottom">
                     <p>
                         2 Person<br />
                         Tue, 14 Feb 2021<br />
                         17.00 WIB
                     </p>
-                </div>
-                <div>
-                    <h4>Approved</h4>
-                    <br />
-                    <br />
-                    <br />
                     <a href="">See detail</a>
                 </div>
             </div>

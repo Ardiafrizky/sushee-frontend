@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="profile.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -19,23 +19,20 @@
     <body>
         <div data-page="header"></div>
 
-        <div class="image">
-            <div class="image-c">
-                <img src="profile.png" alt="profile" id="profile" />
+        <div class="profile-picture">
+            <div>
+                <img src="profile.png" alt="profile-picture" id="profile-picture" />
             </div>
             <p>user@example.com</p>
         </div>
 
         <div class="content">
-            <div class="column2">
-                <h3 class="name">Ardiaf Rizky</h3>
-            </div>
-            <br>
+            <h3 class="profile-name">Ardiaf Rizky</h3>
             <label class="x"
                 >Enter Name
-                <input type="text" id="n-name" placeholder="Name" required/>
-            <a href="profile.html" class="button primary">Change Name</a>
-            <a href="profile.html" class="button secondary">Cancel</a>
+                <input type="text" id="new-name" placeholder="Name" class="input-text" required/>
+            <a href="profile.html" class="button button-primary">Change Name</a>
+            <a href="profile.html" class="button button-secondary">Cancel</a>
         </div>
 
         <div data-page="footer"></div>

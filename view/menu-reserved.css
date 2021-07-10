@@ -1,0 +1,75 @@
+@import "style.css";
+
+.table {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.table-left,
+.table-right {
+    display: flex;
+    justify-content: center;
+}
+.table-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--orange1);
+    position: absolute;
+    padding-top: 25px;
+    z-index: -1;
+}
+.table-vl {
+    border-left: 3px solid black;
+    height: 60px;
+    margin: 0 25px;
+}
+
+.table-time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--orange1);
+    position: absolute;
+    padding-top: 30px;
+    z-index: -1;
+}
+
+.queue-title {
+    color: var(--orange1);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.queue {
+    margin: 20px 0;
+}
+
+.queue-list > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: var(--bradius);
+    margin: 20px 0;
+    padding: 15px;
+    text-align: center;
+}
+
+.queue-list > div:not(.queue-add-order) {
+    border: 1px solid #ccc;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.queue-add-order {
+    justify-content: center;
+    font-weight: bold;
+    border: 2px dashed #444;
+}
+
+.queue-add-order:hover {
+    transition: 0.3s;
+    transform: scale(103%);
+    cursor: pointer;
+}
+
+.queue-list > div:last-child {
+    margin-bottom: 60px;
+}

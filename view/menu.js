@@ -20,15 +20,15 @@ const menus = [
 ]
 
 document.getElementById("menu").innerHTML = `
-<h2 class="menu-title">Menu</h2>
+<div class="menu-title">Menu</div>
 
 ${menus.map(function(menu) {
     return `
         <div class="menu">
-            <h3>${menu.category}</h3>
-            <div class="container">
-                <img src="${menu.imageUrl}" class="image" alt="menu-image" id="menu-image">
-                <div class="name">${menu.name}</div>
+            <div class="menu-category">${menu.category}</div>
+            <div class="menu-container">
+                <img src="${menu.imageUrl}" class="menu-image" alt="menu-image" id="menu-image">
+                <div class="menu-name">${menu.name}</div>
                
             </div>
         </div>
@@ -36,7 +36,27 @@ ${menus.map(function(menu) {
     }).join('')}
 
 `
-{/* <button id="myBtn">Open Modal</button> */}
+
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+const slideValue = document.querySelector("span");
+      const inputSlider = document.querySelector("input");
+      inputSlider.oninput = (()=>{
+        let value = inputSlider.value;
+        slideValue.textContent = value;
+        slideValue.style.left = (value/2) + "%";
+        slideValue.classList.add("show");
+      });
+      inputSlider.onblur = (()=>{
+        slideValue.classList.remove("show");
+      });
 
 // Get the modal
 var modal = document.getElementById("myModal");

@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SUSHEE</title>
 
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="menu-reserved-not-scanned.css" />
+        <link rel="stylesheet" href="menu.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -19,25 +20,30 @@
     <body>
         <div data-page="header"></div>
 
-        <p class="banner">
+        <div class="banner banner-small">
             You have an active reservation. Please scan the barcode below and
             sit on the reserved table
-        </p>
+        </div>
         <div class="barcode">
-            <img src="qr.png" alt="qr" class="qr" />
-            <div class="barcode column">
+            <a href="menu-reserved.html">
+                <img src="qr.png" alt="qr" class="qr" />
+            </a>
+            <div class="barcode barcode-right">
                 <h4>Valid until:</h4>
-                <p>Tuesday, 14 Feb 2021</p>
-                <p>17.00 WIB</p>
-                <p>Reserved for me</p>
+                <p>Sunday, 14 Feb 2021</p>
+                <p>18.00 WIB</p>
+                <p>Reserved for Avi</p>
             </div>
         </div>
-        <p class="banner small">
+        <div class="banner banner-small">
             You can start ordering after the barcode are validated
-        </p>
+        </div>
 
-        <div id="content1"></div>
-        <script src="food.js"></script>
+        <div class="content">
+            <div id="menu"></div>
+        </div>
+
+        <script src="menu.js"></script>
 
         <div data-page="footer"></div>
     </body>
