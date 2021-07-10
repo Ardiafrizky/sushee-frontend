@@ -1,0 +1,29 @@
+@import "style.css";
+
+.administrator-management {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 30px 0 40px;
+}
+
+.administrator-management td,
+.administrator-management th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.administrator-management tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.administrator-management tr:hover {
+    background-color: #ddd;
+}
+
+.administrator-management th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+    background-color: var(--orange1);
+    color: white;
+}

@@ -1,0 +1,71 @@
+@import "style.css";
+
+body {
+    --green: #8beb73;
+    --red: #ec493f;
+    --seat-box-size: 35px;
+}
+
+.seat-box,
+.sb {
+    width: var(--seat-box-size);
+    height: var(--seat-box-size);
+    line-height: var(--seat-box-size);
+}
+
+.seat-box-available,
+.sba {
+    background-color: var(--green);
+}
+
+.seat-box-taken,
+.sbt {
+    background-color: var(--red);
+    color: white;
+}
+
+/* Seat Selection */
+
+.seat-selection {
+    margin: 40px 0;
+    padding: 20px 20px 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: var(--bradius);
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.seat-row {
+    display: flex;
+}
+
+.seat-selection .sb {
+    margin: 0 15px 15px 0;
+}
+
+.seat-selection :not(.seat-row-bottom) .sb:nth-of-type(1) {
+    margin-right: calc(var(--seat-box-size) + 30px);
+}
+.seat-selection :not(.seat-row-bottom) .sb:nth-of-type(2) {
+    margin-right: calc(var(--seat-box-size) + 30px);
+}
+.seat-selection .seat-row-bottom {
+    margin-top: 40px;
+}
+
+.sba:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.seat-change {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+}
+.seat-text {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,35 @@
+@import "style.css";
+
+.admin-title {
+    color: var(--orange1);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.admin {
+    margin: 20px 0;
+}
+
+.admin-menu {
+    display: block;
+    width: 100%;
+    border-radius: var(--bradius);
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+    color: var(--orange1);
+    border: 1px solid #ccc;
+    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.admin-menu:focus,
+.admin-menu:hover {
+    transition: 0.3s;
+    transform: scale(103%);
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.admin-menu:last-child {
+    margin-bottom: 60px;
+}

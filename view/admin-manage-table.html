@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SUSHEE</title>
+
+        <link rel="stylesheet" href="admin-manage-table.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+        />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <div data-page="header"></div>
+
+        <div class="banner banner-big">Table Management</div>
+
+        <div class="content">
+            <div class="seat-selection">
+                <div class="seat-row">
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">4</div>
+                </div>
+                <div class="seat-row">
+                    <div class="sb sba">4</div>
+                    <div class="sb sbt">2</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">4</div>
+                </div>
+                <div class="seat-row">
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sba">4</div>
+                </div>
+                <div class="seat-row">
+                    <div class="sb sbt">4</div>
+                    <div class="sb sba">2</div>
+                    <div class="sb sbt">2</div>
+                    <div class="sb sbt">4</div>
+                </div>
+                <div class="seat-row seat-row-bottom">
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">4</div>
+                    <div class="sb sbt">4</div>
+                    <div class="sb sbt">4</div>
+                    <div class="sb sba">4</div>
+                    <div class="sb sba">4</div>
+                </div>
+            </div>
+
+            <div class="seat-change">
+                <input type="checkbox" />
+                <div class="seat-text">2 Person Table</div>
+            </div>
+            <div class="seat-change">
+                <input type="checkbox" />
+                <div class="seat-text">4 Person Table</div>
+            </div>
+            <div class="seat-change">
+                <input type="checkbox" />
+                <div class="seat-text">Unavailable</div>
+            </div>
+
+            <a href="admin.html" class="button button-primary">Save Changes</a>
+            <a href="admin.html" class="button button-secondary">Cancel</a>
+        </div>
+
+        <div id="content1"></div>
+        <script src="food.js"></script>
+
+        <div data-page="footer"></div>
+    </body>
+</html>
