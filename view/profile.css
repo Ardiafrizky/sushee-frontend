@@ -22,7 +22,6 @@
     border-radius: 50%;
 }
 
-.profile-name > div,
 .profile-email > div,
 .profile-reservation > div {
     display: flex;
@@ -37,6 +36,22 @@
     border-radius: calc(var(--bradius) + 5px);
     box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
     padding: 5px 15px;
+}
+
+.profile-name {
+    margin: 20px 0;
+}
+
+#log-out {
+    width: 90px;
+    margin: 0pt;
+    float: right;
+}
+
+.name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .profile-email {
@@ -54,10 +69,6 @@
 .profile-reservation-bottom {
     align-items: flex-end;
     line-height: var(--line-height);
-}
-
-.profile-name {
-    margin: 20px 0;
 }
 
 a:not(.button):hover,

@@ -4,7 +4,6 @@
     box-sizing: border-box;
     text-decoration: none;
     max-width: 600px;
-    /* overflow-x: hidden; */
     font-family: Roboto;
     --orange1: #ec493f;
     --bradius: 4px;
@@ -20,12 +19,12 @@
     background-color: var(--orange1);
     color: white;
     text-align: center;
-    padding: var(--margin);
+    padding: 20px var(--margin);
     width: 100%;
 }
 
 .banner-big {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
 }
 
 .banner-small {
@@ -82,8 +81,3 @@
 a:not(button) {
     color: var(--orange1);
 }
-
-/* a:not(.button):hover,
-a:not(.button).active {
-    color: var(--orange1);
-} */

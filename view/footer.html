@@ -1,44 +1,30 @@
 <head>
     <style>
-        * {
-            margin: 0;
-            text-decoration: none;
-        }
         footer {
+            text-decoration: none;
             width: 100%;
-            background-color: #2e2e2e;
+            background-color: #222;
             margin-top: 30%;
             padding: 10px;
             max-width: 600px;
             box-sizing: border-box;
             text-align: center;
             font-size: small;
+            --orange1: #ec493f;
         }
 
         footer img {
-            margin: 15px;
+            margin: 20px;
         }
         footer ul li {
             display: block;
             margin: 15px;
         }
         footer ul li a {
-            position: relative;
             color: white;
         }
-
-        footer ul li a:before {
-            position: absolute;
-            content: "";
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: white;
-            transition: all 0.5s;
-        }
-        footer ul li a:hover:before {
-            width: 100%;
+        footer ul li a:hover{
+            color: var(--orange1);
         }
 
         .copyright {
@@ -51,9 +37,10 @@
 <body>
     <footer>
         <img src="./sushee-white.png" alt="logo" class="logo" />
+        <div>
         <ul>
             <li><a href="homepage.html">Menu</a></li>
-            <li><a href="menu-reserved-not-scanned.html">Reservation</a></li>
+            <li><a href="reservation.html">Reservation</a></li>
             <li><a href="#">Outlet</a></li>
             <li><a href="#">About Us</a></li>
         </ul>

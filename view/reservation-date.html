@@ -22,12 +22,26 @@
         <div class="banner banner-big">Take your reservation date</div>
         <div class="content">
             <label class="x"
-                >Reservation Date
-                <input type="date" id="reservation-date" class="input-text" />
+                >Reservation date
+                <input
+                    type="date"
+                    min="2021-01-01"
+                    max="2022-12-31"
+                    id="reservation-date"
+                    class="input-text"
+                    required
+                />
             </label>
             <label class="x"
-                >Reservation Time
-                <input type="time" id="reservation-time" class="input-text" />
+                >Reservation time
+                <input
+                    type="time"
+                    min="09:00"
+                    max="23:00"
+                    id="reservation-time"
+                    class="input-text"
+                    required
+                />
             </label>
             <a href="reservation-seat.html" class="button button-primary"
                 >Confirm date and time</a

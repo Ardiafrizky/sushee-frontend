@@ -3,12 +3,12 @@
 .barcode {
     display: flex;
     justify-content: center;
-    margin: 15px 3% 10px 0;
+    margin: 15px 4vw 10px 0;
 }
 
 .barcode-right {
     flex-direction: column;
-    margin-left: 3%;
+    margin-left: 4vw;
     line-height: var(--line-height);
 }
 
