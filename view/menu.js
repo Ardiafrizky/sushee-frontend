@@ -38,46 +38,12 @@ ${menus.map(function(menu) {
 `
 
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
+// var slider = document.getElementById("myRange");
+// var output = document.getElementById("demo");
+// output.innerHTML = slider.value;
 
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-
-const slideValue = document.querySelector("span");
-      const inputSlider = document.querySelector("input");
-      inputSlider.oninput = (()=>{
-        let value = inputSlider.value;
-        slideValue.textContent = value;
-        slideValue.style.left = (value/2) + "%";
-        slideValue.classList.add("show");
-      });
-      inputSlider.onblur = (()=>{
-        slideValue.classList.remove("show");
-      });
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// When the user clicks the button, open the modal 
-var btn = document.getElementById("myBtn");
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// slider.oninput = function() {
+//   output.innerHTML = this.value;
+// }
 
 

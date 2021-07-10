@@ -6,6 +6,7 @@
         <title>SUSHEE</title>
 
         <link rel="stylesheet" href="profile.css" />
+        <link rel="stylesheet" href="popup.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             rel="stylesheet"
@@ -27,7 +28,8 @@
                     id="profile-picture"
                 />
             </div>
-            <a href="">Change picture</a>
+            <div id="change-picture" onclick="openPopup()">Change picture</div>
+            
         </div>
 
         <div class="content">
@@ -53,19 +55,41 @@
             <h4 class="">Reservation</h4>
             <div class="profile-reservation">
                 <div>
-                    <h4>Table 06</h4>
+                    <h4>Table 6</h4>
                     <h4 class="profile-reservation-status">Approved</h4>
                 </div>
                 <div class="profile-reservation-bottom">
-                    <p>
-                        2 Person<br />
-                        Tue, 14 Feb 2021<br />
-                        17.00 WIB
-                    </p>
-                    <a href="">See detail</a>
+                    <div>
+                        <div>2 Person</div>
+                        <div>Sunday, 14 Feb 2021</div>
+                        <div>18.00 WIB - 19.00 WIB</div>
+                    </div>
+                    <div id="price">Rp440.000,00</div>
                 </div>
             </div>
         </div>
+
+        <!-- Popup change picture -->
+        <div class="popup-container">
+            <div class="popup" id="popup">
+                <div class="popup-header">
+                    <img src="sign-x.png" class="popup-close"></img>
+                    <div class="popup-header-title">Change Picture</div>
+                </div>
+                <div class="popup-content">
+                <img
+                    src="profile.png"
+                    class="image-detail"
+                />
+                <div class="button button-secondary">Upload picture</div>
+                    
+                <a href="profile.html" class="button button-primary">
+                    Save changes</a>
+                </div>
+            </div>
+        </div>
+        
+        <script src="popup.js"></script>
 
         <div data-page="footer"></div>
     </body>

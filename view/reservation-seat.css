@@ -92,11 +92,10 @@ body {
 
 .seat-status {
     margin-bottom: 30px;
-    line-height: 1.5;
+    line-height: var(--line-height);
 }
 
 #seat-count,
 #seat-price {
     color: var(--orange1);
-    font-weight: bold;
 }

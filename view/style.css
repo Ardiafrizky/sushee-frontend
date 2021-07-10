@@ -9,6 +9,7 @@
     --orange1: #ec493f;
     --bradius: 4px;
     --margin: 25px;
+    --line-height: 1.6;
 }
 
 .content {
@@ -28,7 +29,7 @@
 }
 
 .banner-small {
-    line-height: 1.5;
+    line-height: var(--line-height);
 }
 
 .input-text {
@@ -48,7 +49,7 @@
     margin: 10px 0;
     padding: 10px;
     text-align: center;
-    line-height: 1.5;
+    line-height: var(--line-height);
 }
 
 .button:first-of-type {

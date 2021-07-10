@@ -13,6 +13,15 @@
     margin-bottom: 5px;
 }
 
+#change-picture {
+    color: var(--orange1);
+}
+
+.image-detail {
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
 .profile-name > div,
 .profile-email > div,
 .profile-reservation > div {
@@ -44,13 +53,15 @@
 
 .profile-reservation-bottom {
     align-items: flex-end;
+    line-height: var(--line-height);
 }
 
-/* Change-Name HTML */
 .profile-name {
     margin: 20px 0;
 }
 
-a:not(.button):hover {
+a:not(.button):hover,
+#change-picture:hover {
     font-weight: bold;
+    cursor: pointer;
 }

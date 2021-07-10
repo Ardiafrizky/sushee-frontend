@@ -6,6 +6,7 @@
         <title>SUSHEE</title>
 
         <link rel="stylesheet" href="menu.css" />
+        <link rel="stylesheet" href="popup.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             rel="stylesheet"
@@ -38,52 +39,45 @@
         <div class="content">
             <div id="menu"></div>
         </div>
-
+        
         <!-- The Modal -->
-        <button id="myBtn">Open Modal</button>
+        <div id="open-popup" onclick="openPopup()">Open Modal</div>
 
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="popup">
-                <div class="popup-title">
-                    <img src="sign-x.png" class="close"></img>
-                    <div class="popup-menu-name">Salmon Nigiri</div>
+        <div class="popup-container" id="popup-container" >
+            <div class="popup" id="popup">
+                <div class="popup-header">
+                    <img src="sign-x.png" class="popup-close"></img>
+                    <div class="popup-header-title">Salmon Nigiri</div>
                 </div>
                 <img
                     src="https://images.unsplash.com/photo-1562707786-7d2b807961c4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
                     class="image-detail"
                 />
+
                 <div class="popup-content">
-                    <h3>Description</h3>
+                    <div class="popup-content-title description-title">Description</div>
                     <div class="description">Nasi dengan campuran saripati plum
-                        dengan potongan daging salom segar di atasnya.
+                        dengan potongan daging salmon segar di atasnya.
                     </div>
-                    <h3>Quantity</h3>
-                    <div class="slidecontainer">
-                        <input type="range" min="1" max="10" value="1" class="slider" id="myRange">
-                        <p>Value: <span id="demo"></span></p>
+
+                    <div class="popup-content-title quantity-title">Quantity</div>
+                    <div class="slider-container">
+                        <div class="slider-value-left">1</div>
+                        <input type="range" min="1" max="10" value="1" class="slider" id="slider-value">
+                        <div class="slider-value-right">10</div>
                     </div>
-                    <!-- <div class="slider1">
-                        <div class="field">
-                            <div class="value left">0</div>
-                            <input type="range" min="0" max="10">
-                            <div class="value right">10</div>
-                        </div>
-                        <div class="sliderValue">
-                            <span>5</span>
-                        </div>
-                    </div> -->
+                    <div class="result-value">Value: <span id="result-value">1</span></div>
                     
-
                     <a href="reservation-date.html" class="button button-primary"
-                        >Add to order queue</a
-                    >
-
+                        >Add to order queue
+                    </a>
                 </div>
             </div>
         </div>
         
+        
         <script src="menu.js"></script>
+        <script src="popup.js"></script>
         
         <div class="banner banner-small about">
             <div class="about-title">About Us</div>
@@ -91,13 +85,13 @@
                 SUSHEE Restaurant merupakan restoran Jepang yang menyediakan 
             berbagai macam sushi dengan bahan segar terbaik. <br><br>
             
-            SUSHEE Restaurant mengusung konsep self-service di mana 
+            SUSHEE Restaurant mengusung konsep self-service sehingga 
             pelanggan hanya perlu membayar sekali.
              </p>
         </div>
         <div class="content">
             <div class="outlet-title">Explore SUSHEE in Your Area</div>
-        <a href="homepage.html" class="button button-secondary"
+        <a href="homepage.html" class="button button-secondary" id="find-sushee"
             >Find SUSHEE outlet</a
         >
     </div>

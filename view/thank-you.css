@@ -1,7 +1,7 @@
 @import "style.css";
 
 .thank-you-text {
-    line-height: 1.5;
+    line-height: var(--line-height);
     margin-bottom: 40px;
 }
 #thank-you {

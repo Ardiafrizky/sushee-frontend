@@ -2,14 +2,33 @@
 
 .status-title {
     font-weight: bold;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 .status {
     margin-bottom: 20px;
-    line-height: 1.5;
+    line-height: var(--line-height);
 }
+
+.hr {
+    margin: 20px 0;
+}
+
+.price-detail > div {
+    display: flex;
+    justify-content: space-between;
+}
+.price-detail-cost {
+    margin: 5px 0;
+}
+.price-detail-tax {
+    margin-bottom: 20px;
+}
+.price-value {
+    color: var(--orange1);
+}
+
 .total {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
     font-weight: bold;
 }
@@ -19,18 +38,4 @@
     font-weight: bold;
     color: var(--orange1);
     margin: 10px 0 40px;
-}
-
-.price-detail {
-    display: flex;
-    justify-content: space-between;
-}
-.price-detail-cost {
-    margin: 10px 0;
-}
-.price-detail-tax {
-    margin-bottom: 40px;
-}
-.price-value {
-    color: var(--orange1);
 }

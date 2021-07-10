@@ -1,3 +1,4 @@
+//Load Header & Footer
 $(function () {
     var pages = $("[data-page]");
     $.each(pages, function () {

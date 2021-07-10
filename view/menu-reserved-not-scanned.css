@@ -9,7 +9,7 @@
 .barcode-right {
     flex-direction: column;
     margin-left: 3%;
-    line-height: 1.5;
+    line-height: var(--line-height);
 }
 
 .barcode img:hover {
